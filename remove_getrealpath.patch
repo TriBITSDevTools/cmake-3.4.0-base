@@ -1,0 +1,20 @@
+--- A/Source/cmOrderDirectories.orig.cxx	2015-11-20 17:16:32.000000000 -0500
++++ B/Source/cmOrderDirectories.cxx		2015-11-20 17:16:18.000000000 -0500
+@@ -74,8 +74,6 @@
+       // Check if this directory conflicts with the entry.
+       std::string const& dir = this->OD->OriginalDirectories[i];
+       if(dir != this->Directory &&
+-         cmSystemTools::GetRealPath(dir) !=
+-         cmSystemTools::GetRealPath(this->Directory) &&
+          this->FindConflict(dir))
+         {
+         // The library will be found in this directory but this is not
+@@ -95,8 +93,6 @@
+       // Check if this directory conflicts with the entry.
+       std::string const& dir = this->OD->OriginalDirectories[i];
+       if(dir != this->Directory &&
+-         cmSystemTools::GetRealPath(dir) !=
+-         cmSystemTools::GetRealPath(this->Directory) &&
+          this->FindConflict(dir))
+         {
+         // The library will be found in this directory but it is
